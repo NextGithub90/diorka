@@ -1,0 +1,208 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #2563eb;       /* Royal Blue */
+    --secondary-color: #f59e0b;     /* Amber/Gold */
+    --dark-navy: #0f172a;           /* Deep Navy */
+    --light-bg: #f8fafc;            /* Very Light Blue/Gray */
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    margin-right: 1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--dark-navy) 0%, #1e3a8a 100%);
+    min-height: 100vh;
+    padding-top: 80px; /* Offset for fixed navbar */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.2);
+    filter: blur(80px);
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(245, 158, 11, 0.15);
+    filter: blur(60px);
+}
+
+.opacity-90 { opacity: 0.9; }
+
+.glass-effect {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Trust Section */
+.icon-box {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Transform Hover (Custom stronger lift) */
+.transform-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transform-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+}
+
+
+/* Backgrounds */
+.bg-navy { background-color: var(--dark-navy); }
+.bg-light-blue { background-color: #e0f2fe; }
+
+/* Cards & Glassmorphism */
+.backdrop-blur {
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.backdrop-blur:hover {
+    background-color: rgba(255,255,255,0.2) !important;
+    transform: translateY(-5px);
+}
+
+.border-dashed {
+    border: 2px dashed #cbd5e1;
+    background-color: white;
+}
+
+/* Step Cards */
+.step-card {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.step-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Portfolio */
+.portfolio-item .overlay {
+    transition: all 0.3s ease;
+}
+
+.group:hover .overlay {
+    opacity: 1 !important;
+}
+
+.portfolio-item img {
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Pricing */
+.pulse-anim {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+/* Footer */
+.hover-text-primary:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .h1-hero {
+        font-size: 2.5rem;
+    }
+    .hero-section {
+        text-align: center;
+        padding-bottom: 3rem;
+    }
+    .hero-section .d-flex {
+        justify-content: center;
+    }
+}
