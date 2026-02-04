@@ -635,11 +635,11 @@ section.py-5:not(.bg-light):not(.bg-navy) ul li:last-child {
 }
 
 .portfolio-item .overlay {
-    background: linear-gradient(135deg, rgba(10, 22, 40, 0.9) 0%, rgba(22, 45, 77, 0.85) 100%) !important;
-    opacity: 0;
-    transition: all 0.4s ease;
+    display: none !important;
 }
 
+/* 
+Removed hover overlay effects as requested
 .group:hover .overlay {
     opacity: 1 !important;
 }
@@ -651,7 +651,8 @@ section.py-5:not(.bg-light):not(.bg-navy) ul li:last-child {
 
 .group:hover .overlay p {
     transform: translateY(0);
-}
+} 
+*/
 
 /* ============================================
    TESTIMONIALS
