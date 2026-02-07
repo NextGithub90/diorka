@@ -1009,3 +1009,251 @@ footer a {
         transform: translateY(0);
     }
 }
+
+/* ============================================
+   FLOATING WHATSAPP BUTTON
+   ============================================ */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+    z-index: 9999;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: whatsapp-pulse 2s infinite, whatsapp-bounce 3s ease-in-out infinite;
+}
+
+.whatsapp-float i {
+    font-size: 28px;
+    color: white;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.7);
+    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+}
+
+.whatsapp-float:hover i {
+    color: white;
+}
+
+@keyframes whatsapp-pulse {
+    0%, 100% {
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5), 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes whatsapp-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ============================================
+   PORTFOLIO GALLERY ENHANCED
+   ============================================ */
+
+.portfolio-img {
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(10, 22, 40, 0.8) 0%, rgba(37, 99, 235, 0.7) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-overlay .overlay-content {
+    transform: translateY(20px);
+    transition: transform 0.3s ease 0.1s;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-item:hover .overlay-content {
+    transform: translateY(0);
+}
+
+.portfolio-item:hover .portfolio-img {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   SOCIAL MEDIA ICONS - FOOTER
+   ============================================ */
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icon.facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #0d5bbf 100%);
+}
+
+.social-icon.tiktok {
+    background: linear-gradient(135deg, #000000 0%, #25F4EE 50%, #FE2C55 100%);
+}
+
+.social-icon.youtube {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.social-icon i {
+    color: white;
+}
+
+/* Hover text effect for footer links */
+.hover-text-white:hover {
+    color: white !important;
+}
+
+/* Footer enhancements */
+footer .text-white-50 a:hover {
+    color: var(--gold-500) !important;
+}
+
+/* ============================================
+   PORTFOLIO MOBILE SLIDER
+   ============================================ */
+
+.portfolio-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.portfolio-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding: 10px 0;
+}
+
+.portfolio-slider::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.portfolio-slide {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    min-width: 85%;
+}
+
+.portfolio-slide .portfolio-item {
+    width: 100%;
+}
+
+/* Slider Navigation Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.slider-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dots .dot.active {
+    background: linear-gradient(135deg, var(--navy-600) 0%, var(--navy-800) 100%);
+    transform: scale(1.3);
+}
+
+.slider-dots .dot:hover {
+    background: var(--gold-500);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-float i {
+        font-size: 24px;
+    }
+    
+    .portfolio-img {
+        height: 200px;
+    }
+    
+    .portfolio-slide {
+        flex: 0 0 90%;
+        min-width: 90%;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+a#whatsapp-btn {
+    text-decoration: none;
+}
+a{
+    text-decoration: none !important;
+}
